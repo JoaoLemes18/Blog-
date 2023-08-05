@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Post Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/style/postDetails.css"
+    />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Recupere o post armazenado em localStorage
+        var selectedPost = JSON.parse(localStorage.getItem("selectedPost"));
+
+        if (selectedPost) {
+          // Acesse os dados do post e exiba-os na página como necessário
+          var postTitleElement = document.getElementById("postTitle");
+          var postImageElement = document.getElementById("postImage");
+          var postBodyElement = document.getElementById("postBody");
+          var commentsContainer = document.getElementById("commentsContainer");
+
+          postTitleElement.textContent = selectedPost.title;
+          postImageElement.src = selectedPost.imageUrl;
+          postBodyElement.textContent = selectedPost.body;
+
+          // Exibir os comentários
+          if (selectedPost.comments && selectedPost.comments.length > 0) {
+            selectedPost.comments.forEach((comment) => {
+              const commentItem = document.createElement("div");
+              commentItem.className = "commentItem";
+
+              const commentContent = `
+                            <p><strong>${comment.name}</strong> (${comment.email})</p>
+                            <p class = "commentbody">${comment.body}</p>
+                        `;
+              commentItem.innerHTML = commentContent;
+
+              commentsContainer.appendChild(commentItem);
+            });
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <img src="/assets/logo.png" class="logoNav" />
+      <div class="title-logo"><span> BLOG</span></div>
+    </header>
+    <main>
+      <a href="/index.html">
+        <img src="/assets/EllipseBack.png" class="backToHome" alt="back"
+      /></a>
+      <div class="post_details">
+        <img
+          class="image_card_detailed"
+          id="postImage"
+          src=""
+          alt="Post Image"
+        />
+        <h2 class="card_title_detailed" id="postTitle"></h2>
+        <p class="description_detailed" id="postBody"></p>
+      </div>
+
+      <div class="comments_container" id="commentsContainer"></div>
+    </main>
+    <script src="/src/data.js"></script>
+  </body>
+</html>

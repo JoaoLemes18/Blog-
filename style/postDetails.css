@@ -1,0 +1,116 @@
+* {
+  font-family: "Inter";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  margin-bottom: 820px;
+}
+/* Header */
+.header {
+  position: static;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  background-color: #32325d;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+/* Main */
+.logoNav {
+  margin-left: 60px;
+  width: 40px;
+  height: 40px;
+}
+.backToHome {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+.title-logo {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 25px;
+  color: white;
+}
+/*Post Details*/
+.post_details {
+  display: flex;
+  flex-direction: column;
+  width: 771px;
+  height: 519px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.card_title_detailed {
+  margin-top: 30.21px;
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.1rem;
+  color: #3a4f9a;
+}
+
+.description_detailed {
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  margin-right: 39px;
+  color: #6b7280;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 1.3px;
+}
+
+.image_card_detailed {
+  object-fit: cover;
+  width: 771px;
+  height: 311.4px;
+}
+
+/*Comments*/
+
+.commentItem {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.comments_container {
+  margin-top: 200px;
+  position: absolute;
+  width: 771px;
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Move para a esquerda a metade da largura */
+  top: calc(519px + 55px); /* Posiciona abaixo do .post_details */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #3a4f9a;
+}
+.commentname {
+  color: #3a4f9a;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 1.6px;
+  margin-top: 1.25rem;
+  margin-left: 3.417rem;
+  margin-right: 2.813rem;
+}
+
+.commentbody {
+  color: #575757;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 1.6px;
+}
